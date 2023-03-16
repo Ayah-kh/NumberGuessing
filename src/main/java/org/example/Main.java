@@ -33,9 +33,9 @@ class Guessing {
 
             if (diff <= 3)
                 System.out.println("You're almost there");
-            else if (diff > 3 && diff <= 9)
+            else if (diff <= 9)
                 System.out.println("You're close");
-            else if (diff > 9 && diff <= 15)
+            else if (diff <= 15)
                 System.out.println("Not close enough");
             else
                 System.out.println("You're far");
