@@ -24,7 +24,7 @@ class Guessing {
             System.out.println("Enter you guess, a number between 1 - 100: ");
             while (true) {
                 guess = scanner.nextInt();
-                if (guess>=1 && guess<=100) {
+                if (guess >= 1 && guess <= 100) {
                     break;
                 }
                 System.out.println("Please Enter a number between 1 - 100");
@@ -46,7 +46,6 @@ class Guessing {
             else
                 System.out.println("You're far");
         }
-
     }
 }
 
@@ -55,7 +54,6 @@ public class Main {
 
         Guessing guessing = new Guessing();
         guessing.play();
-
 
     }
 }
