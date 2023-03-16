@@ -2,11 +2,24 @@ package org.example;
 
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
+class Guessing{
+
+    private int rightNumber;
+    Scanner scanner;
+
+    public Guessing() {
+        rightNumber=this.randomNumber();
+        scanner=new Scanner(System.in);
+    }
+
+    private int randomNumber(){
         Random rand = new Random();
-        int rightNumber = rand.nextInt(10) + 1;
-        System.out.println(rightNumber);
+        int Number = rand.nextInt(100) + 1;
+        System.out.println(Number);
+        return Number;
+    }
+
+    public void play(){
         int guess;
         Scanner scanner=new Scanner(System.in);
 
@@ -32,5 +45,14 @@ public class Main {
             }
 
         }
+
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+
+
     }
 }
