@@ -14,9 +14,7 @@ class Guessing {
 
     private int randomNumber() {
         Random rand = new Random();
-        int Number = rand.nextInt(100) + 1;
-//        System.out.println(Number);
-        return Number;
+        return rand.nextInt(100) + 1;
     }
 
     public void play() {
