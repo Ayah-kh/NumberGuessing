@@ -1,11 +1,13 @@
 package org.example;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        int rightNumber = 5;
-        int guess=0;
+        Random rand = new Random();
+        int rightNumber = rand.nextInt(10) + 1;
+        System.out.println(rightNumber);
+        int guess;
         Scanner scanner=new Scanner(System.in);
 
         while (true){
@@ -15,6 +17,20 @@ public class Main {
                 System.out.println("your guess are right");
                 break;
             }
+
+            switch (Math.abs(guess-rightNumber)){
+                case 1:
+                    System.out.println("You're almost there");
+                    break;
+                case 2:
+                case 3:
+                    System.out.println("You're close");
+                    break;
+                default:
+                    System.out.println("You're far");
+                    break;
+            }
+
         }
     }
 }
