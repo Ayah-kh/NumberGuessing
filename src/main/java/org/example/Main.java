@@ -4,8 +4,8 @@ import java.util.*;
 
 class Guessing {
 
-    private int rightNumber;
-    Scanner scanner;
+    private final int rightNumber;
+    private final Scanner scanner;
 
     public Guessing() {
         rightNumber = this.randomNumber();
@@ -15,7 +15,7 @@ class Guessing {
     private int randomNumber() {
         Random rand = new Random();
         int Number = rand.nextInt(100) + 1;
-        System.out.println(Number);
+//        System.out.println(Number);
         return Number;
     }
 
@@ -29,24 +29,16 @@ class Guessing {
                 break;
             }
 
-            switch (Math.abs(guess - rightNumber)) {
-                case 1:
-                case 2:
-                case 3:
-                    System.out.println("You're almost there");
-                    break;
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                    System.out.println("You're close");
-                    break;
-                default:
-                    System.out.println("You're far");
-                    break;
-            }
+            int diff = Math.abs(guess - rightNumber);
 
+            if (diff <= 3)
+                System.out.println("You're almost there");
+            else if (diff > 3 && diff <= 9)
+                System.out.println("You're close");
+            else if (diff > 9 && diff <= 15)
+                System.out.println("Not close enough");
+            else
+                System.out.println("You're far");
         }
 
     }
@@ -55,7 +47,7 @@ class Guessing {
 public class Main {
     public static void main(String[] args) {
 
-        Guessing guessing=new Guessing();
+        Guessing guessing = new Guessing();
         guessing.play();
 
 
