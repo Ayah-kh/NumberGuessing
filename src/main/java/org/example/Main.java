@@ -21,9 +21,17 @@ class Guessing {
 
     public void play() {
         int guess;
+
         while (true) {
-            System.out.println("enter you guess: ");
-            guess = scanner.nextInt();
+            System.out.println("Enter you guess, a number between 1 - 100: ");
+            while (true) {
+                guess = scanner.nextInt();
+                if (guess>=1 && guess<=100) {
+                    break;
+                }
+                System.out.println("Please Enter a number between 1 - 100");
+            }
+
             if (guess == rightNumber) {
                 System.out.println("your guess are right");
                 break;
